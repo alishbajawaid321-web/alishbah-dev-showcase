@@ -32,10 +32,10 @@ export function Navbar() {
     >
       <nav
         aria-label="Main"
-        className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6"
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-8"
       >
         <a href="#home" className="flex min-w-0 items-center gap-2.5">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-ink font-display text-sm font-bold text-ink-foreground">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-accent font-display text-sm font-bold text-accent-foreground">
             A
           </span>
           <span className="truncate font-display text-lg font-bold tracking-tight">ALISHBAH</span>
@@ -57,7 +57,7 @@ export function Navbar() {
         <div className="flex shrink-0 items-center gap-2">
           <a
             href="#contact"
-            className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-ink-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift sm:inline-flex"
+            className="hidden rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift sm:inline-flex"
           >
             Let's Work Together
           </a>
@@ -67,7 +67,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-card text-foreground transition-colors hover:bg-secondary lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-md border border-border bg-card text-foreground transition-colors hover:bg-secondary lg:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -85,7 +85,7 @@ export function Navbar() {
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-secondary"
+                className="block rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-secondary"
               >
                 {link.label}
               </a>
@@ -95,7 +95,7 @@ export function Navbar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-ink-foreground"
+              className="block rounded-md bg-accent px-5 py-3 text-center text-sm font-semibold text-accent-foreground"
             >
               Let's Work Together
             </a>

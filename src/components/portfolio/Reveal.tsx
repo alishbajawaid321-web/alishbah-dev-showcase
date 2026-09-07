@@ -56,11 +56,10 @@ export function SectionHeading({
 }) {
   return (
     <Reveal className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
-      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs uppercase tracking-widest text-accent">
-        <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+      <span className="inline-flex items-center gap-2 border-l-2 border-accent pl-3 font-mono text-xs font-semibold uppercase tracking-widest text-accent">
         {eyebrow}
       </span>
-      <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.75rem]">
+      <h2 className="mt-5 text-3xl font-bold leading-[1.12] sm:text-4xl lg:text-[2.75rem]">
         {title}
       </h2>
       {description ? (

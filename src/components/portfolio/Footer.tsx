@@ -4,7 +4,7 @@ import { contact, navLinks } from "@/lib/portfolio-data";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-ink text-ink-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-8 md:grid-cols-3">
         <div>
           <a href="#home" className="font-display text-xl font-bold tracking-tight">
             ALISHBAH
@@ -61,7 +61,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-ink-foreground/10">
-        <p className="mx-auto max-w-6xl px-4 py-6 text-center text-xs text-ink-foreground/60 sm:px-6">
+        <p className="mx-auto max-w-7xl px-4 py-6 text-center text-xs text-ink-foreground/60 sm:px-8">
           © 2026 Alishbah. All rights reserved.
         </p>
       </div>

@@ -22,7 +22,7 @@ const steps = [
 export function Journey() {
   return (
     <section className="relative py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <SectionHeading
           eyebrow="Journey"
           title="My Development Journey"
@@ -36,7 +36,7 @@ export function Journey() {
                 className="absolute -left-[1.85rem] top-6 grid h-4 w-4 place-items-center rounded-full border-2 border-accent bg-background sm:-left-[2.35rem]"
                 aria-hidden="true"
               />
-              <div className="rounded-3xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+              <div className="rounded-md border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                 <span className="font-mono text-xs font-bold text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
