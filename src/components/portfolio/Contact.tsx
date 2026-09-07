@@ -36,7 +36,7 @@ function validate(form: FormState): Errors {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/40";
+  "w-full rounded-md border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/40";
 
 export function Contact() {
   const [form, setForm] = useState<FormState>(initialForm);
@@ -72,7 +72,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative scroll-mt-24 py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <SectionHeading
           eyebrow="Contact"
           title="Let's Build Something Together"
@@ -85,7 +85,7 @@ export function Contact() {
               <li>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50"
+                   className="group flex items-center gap-4 rounded-md border border-border bg-card p-5 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50"
                 >
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
                     <Mail size={19} />
@@ -103,7 +103,7 @@ export function Contact() {
               <li>
                 <a
                   href={`tel:${contact.phone}`}
-                  className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50"
+                   className="group flex items-center gap-4 rounded-md border border-border bg-card p-5 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50"
                 >
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
                     <Phone size={19} />
@@ -118,7 +118,7 @@ export function Contact() {
                   </span>
                 </a>
               </li>
-              <li className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft">
+               <li className="flex items-center gap-4 rounded-md border border-border bg-card p-5 shadow-soft">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
                   <MapPin size={19} />
                 </span>
@@ -140,7 +140,7 @@ export function Contact() {
             <form
               onSubmit={handleSubmit}
               noValidate
-              className="rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8"
+               className="rounded-md border border-border bg-card p-6 shadow-soft sm:p-8"
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
@@ -220,7 +220,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-ink-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
               >
                 {status === "sending" ? (
                   <Loader2 size={16} className="animate-spin" />

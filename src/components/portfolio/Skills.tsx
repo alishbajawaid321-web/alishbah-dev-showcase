@@ -40,7 +40,7 @@ const skills = [
 export function Skills() {
   return (
     <section id="skills" className="relative scroll-mt-24 bg-surface py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <SectionHeading
           eyebrow="Skills"
           title="The tools I build with"
@@ -50,8 +50,8 @@ export function Skills() {
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill, i) => (
             <Reveal as="li" key={skill.name} delay={(i % 3) * 80}>
-              <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lift">
-                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+              <div className="group h-full rounded-md border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lift">
+                <span className="grid h-11 w-11 place-items-center rounded-md bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
                   <skill.icon size={20} />
                 </span>
                 <h3 className="mt-4 text-base font-bold">{skill.name}</h3>

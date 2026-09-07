@@ -28,7 +28,7 @@ function StatusBadge({ project }: { project: Project }) {
 
 function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void }) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+    <article className="group flex h-full flex-col overflow-hidden rounded-md border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
       <div className="relative aspect-16/11 overflow-hidden bg-secondary">
         <img
           src={project.image}
@@ -75,7 +75,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-ink-foreground transition-transform duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-1.5 rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground transition-transform duration-300 hover:-translate-y-0.5"
             >
               Live Demo
               <ExternalLink size={14} />
@@ -84,7 +84,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
           <button
             type="button"
             onClick={onOpen}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2.5 text-sm font-semibold transition-colors duration-300 hover:border-accent hover:text-accent"
+            className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2.5 text-sm font-semibold transition-colors duration-300 hover:border-accent hover:text-accent"
           >
             {project.status === "completed" ? "View Project" : "Project Details"}
             <ArrowUpRight size={14} />
@@ -102,7 +102,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative scroll-mt-24 bg-surface py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+       <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <SectionHeading
           eyebrow="Projects"
           title="Websites I've built and deployed"
@@ -112,9 +112,9 @@ export function Projects() {
         <h3 className="mt-12 font-display text-sm font-bold uppercase tracking-widest text-muted-foreground">
           Completed Projects
         </h3>
-        <div className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-12">
           {completed.map((project, i) => (
-            <Reveal key={project.id} delay={(i % 3) * 90}>
+            <Reveal key={project.id} delay={(i % 3) * 90} className={i === 0 ? "lg:col-span-6" : "lg:col-span-3"}>
               <ProjectCard project={project} onOpen={() => setActive(project)} />
             </Reveal>
           ))}
