@@ -10,9 +10,10 @@ const steps = [
     body: "Created and deployed three website projects: Crave Hub, Fresh Cart, and Lumera.",
   },
   {
-    title: "Frontend Development",
-    body: "Applied for frontend development opportunities while continuing to build.",
+    title: "Frontend Web Development — Bano Qabil",
+    body: "Currently enrolled, deepening my frontend skills while building real projects.",
   },
+
   {
     title: "Client Project",
     body: "Currently developing an Online Quran Tutor website for a client.",
