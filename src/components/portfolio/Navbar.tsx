@@ -41,7 +41,7 @@ export function Navbar() {
           <span className="truncate font-display text-lg font-bold tracking-tight">ALISHBAH</span>
         </a>
 
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul className="hidden items-center gap-5 lg:flex xl:gap-7">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -77,7 +77,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="border-t border-border bg-background/98 backdrop-blur-xl lg:hidden"
+        className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border bg-background/98 backdrop-blur-xl lg:hidden"
       >
         <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 sm:px-6">
           {navLinks.map((link) => (
