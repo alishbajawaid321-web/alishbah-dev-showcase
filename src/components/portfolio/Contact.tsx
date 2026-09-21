@@ -41,7 +41,7 @@ const inputClass =
 const EMAILJS_CONFIG = {
   serviceId: "vgml2vn",
   templateId: "hm45j4t",
-  publicKey: "ccccccc5NWOi79Kq4YFjZhqb",
+  publicKey: "5NWOi79Kq4YFjZhqb",
 };
 
 async function sendEmailNotification(values: FormState) {
