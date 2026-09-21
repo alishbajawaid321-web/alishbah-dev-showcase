@@ -40,7 +40,7 @@ const inputClass =
 
 const EMAILJS_CONFIG = {
   serviceId: "service_vgml2vn",
-  templateId: "hm45j4t",
+  templateId: "template_hm45j4t",
   publicKey: "5NWOi79Kq4YFjZhqb",
 };
 
