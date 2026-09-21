@@ -83,22 +83,38 @@ export function Contact() {
     if (Object.values(nextErrors).some(Boolean)) return;
 
     setStatus("sending");
+    let emailSent = false;
     try {
       await sendEmailNotification(form);
+      emailSent = true;
+    } catch (err) {
+      console.error("Email delivery failed:", err);
+    }
 
-      // Keep a backup copy of the message in the database.
+    // Keep a backup copy of the message in the database — even if the email failed.
+    let dbSaved = false;
+    try {
       const { error } = await supabase.from("contact_messages").insert({
         name: form.name.trim(),
         email: form.email.trim(),
         subject: form.subject.trim(),
         message: form.message.trim(),
       });
+      dbSaved = !error;
       if (error) console.warn("Database backup save failed:", error.message);
+    } catch (err) {
+      console.error("Database backup failed:", err);
+    }
 
+    if (emailSent && dbSaved) {
       setStatus("success");
       setForm(initialForm);
-    } catch (err) {
-      console.error("Submission failed:", err);
+    } else if (dbSaved) {
+      // Message is safe in the database, but the email notification failed.
+      setStatus("success");
+      setForm(initialForm);
+ecent      console.warn("Email delivery failed; message saved to database only.");
+    } else {
       setStatus("error");
     }
   }
