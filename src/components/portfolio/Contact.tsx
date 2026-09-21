@@ -113,7 +113,7 @@ export function Contact() {
       // Message is safe in the database, but the email notification failed.
       setStatus("success");
       setForm(initialForm);
-ecent      console.warn("Email delivery failed; message saved to database only.");
+      console.warn("Email delivery failed; message saved to database only.");
     } else {
       setStatus("error");
     }
