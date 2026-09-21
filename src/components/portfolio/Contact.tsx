@@ -38,6 +38,34 @@ function validate(form: FormState): Errors {
 const inputClass =
   "w-full rounded-md border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/40";
 
+const EMAILJS_CONFIG = {
+  serviceId: "vgml2vn",
+  templateId: "hm45j4t",
+  publicKey: "ccccccc5NWOi79Kq4YFjZhqb",
+};
+
+async function sendEmailNotification(values: FormState) {
+  const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      service_id: EMAILJS_CONFIG.serviceId,
+      template_id: EMAILJS_CONFIG.templateId,
+      user_id: EMAILJS_CONFIG.publicKey,
+      template_params: {
+        name: values.name.trim(),
+        from_name: values.name.trim(),
+        email: values.email.trim(),
+        from_email: values.email.trim(),
+        reply_to: values.email.trim(),
+        subject: values.subject.trim(),
+        message: values.message.trim(),
+      },
+    }),
+  });
+  if (!response.ok) throw new Error(`EmailJS failed: ${await response.text()}`);
+}
+
 export function Contact() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [errors, setErrors] = useState<Errors>({});
@@ -56,16 +84,21 @@ export function Contact() {
 
     setStatus("sending");
     try {
+      await sendEmailNotification(form);
+
+      // Keep a backup copy of the message in the database.
       const { error } = await supabase.from("contact_messages").insert({
         name: form.name.trim(),
         email: form.email.trim(),
         subject: form.subject.trim(),
         message: form.message.trim(),
       });
-      if (error) throw error;
+      if (error) console.warn("Database backup save failed:", error.message);
+
       setStatus("success");
       setForm(initialForm);
-    } catch {
+    } catch (err) {
+      console.error("Submission failed:", err);
       setStatus("error");
     }
   }
