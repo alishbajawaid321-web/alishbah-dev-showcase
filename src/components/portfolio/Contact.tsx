@@ -39,7 +39,7 @@ const inputClass =
   "w-full rounded-md border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/40";
 
 const EMAILJS_CONFIG = {
-  serviceId: "vgml2vn",
+  serviceId: "service_vgml2vn",
   templateId: "hm45j4t",
   publicKey: "5NWOi79Kq4YFjZhqb",
 };
