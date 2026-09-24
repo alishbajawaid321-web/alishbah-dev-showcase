@@ -53,6 +53,9 @@ async function sendEmailNotification(values: FormState) {
       template_id: EMAILJS_CONFIG.templateId,
       user_id: EMAILJS_CONFIG.publicKey,
       template_params: {
+        to_name: "Alishbah Jawaid",
+        to_email: contact.email,
+        recipient_email: contact.email,
         name: values.name.trim(),
         from_name: values.name.trim(),
         email: values.email.trim(),
