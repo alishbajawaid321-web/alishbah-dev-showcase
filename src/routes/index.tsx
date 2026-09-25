@@ -26,6 +26,22 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        property: "og:image",
+        content:
+          "https://alishbah-dev-showcase.lovable.app/__l5e/assets-v1/6c7285e5-ced7-4277-82d4-e3c961eaeccc/og-image.jpg",
+      },
+      {
+        property: "og:image:alt",
+        content: "AJ logo — Alishbah Jawaid, Frontend Web Developer",
+      },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        name: "twitter:image",
+        content:
+          "https://alishbah-dev-showcase.lovable.app/__l5e/assets-v1/6c7285e5-ced7-4277-82d4-e3c961eaeccc/og-image.jpg",
+      },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
